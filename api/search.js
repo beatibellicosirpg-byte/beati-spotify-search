@@ -49,7 +49,7 @@ export default async function handler(req, res) {
   try {
     const accessToken = await getAccessToken(clientId, clientSecret);
 
-    const spotifyUrl = `https://api.spotify.com/v1/search?q=${encodeURIComponent(query)}&type=track&limit=12`;
+    const spotifyUrl = `https://api.spotify.com/v1/search?q=${encodeURIComponent(query)}&type=track&limit=10`;
 
     const searchResponse = await fetch(spotifyUrl, {
       headers: { 'Authorization': 'Bearer ' + accessToken }
